@@ -1,0 +1,28 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "build every cpp file in workspace folder",
+			"command": "C:\\Pico-Tools\\mingw64\\bin\\g++.exe",
+			"args": [
+				"-fdiagnostics-color=always",
+				"-g",
+				"${workspaceFolder}\\*.cpp",
+				"-o",
+				"${workspaceFolder}\\${workspaceFolderBasename}.exe"
+			],
+			"options": {
+				"cwd": "C:\\Pico-Tools\\mingw64\\bin\\g++.exe"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "compiler: C:\\Pico-Tools\\mingw64\\bin\\g++.exe"
+		}
+	]
+}

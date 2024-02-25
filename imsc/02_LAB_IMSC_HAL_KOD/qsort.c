@@ -18,8 +18,6 @@ void asd_qsort(void *asd, int n, int size, int (*f)(const void *a, const void *b
 int main ()
 {
 
-    qsort();
-
 
     return 0;
 }

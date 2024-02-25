@@ -7,5 +7,5 @@ struct alma
 
 double increment(double x)
 {
-    return x + 1.0;
+    return x + 3.0;
 }

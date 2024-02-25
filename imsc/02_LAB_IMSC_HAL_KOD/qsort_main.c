@@ -9,6 +9,8 @@
 // tömböt átadhatunk volna a qsortnak, és
 // ő nem tud a típusról.
 // Miért void pointerek a paraméterei?
+// Mert nem kell előre definiálni, hogy milyen típusú változó értéékét szeretnénk átadni neki
+
 int compare(const void *a, const void *b)
 {
 	// 1. FELADAT - ide kell egy break point (töréspont)
@@ -28,14 +30,14 @@ int compare(const void *a, const void *b)
 
 
 
-main()
+int main()
 {
 	// 2. FELADAT: tömbméret bekérés a felhasználótól. Használj dinamikus memóriakezelést!
 
 	int n;
-	scanf("%d" &n);
+	scanf("%d", &n);
 
-	double *d = malloc(n * sizeof(double));
+	double *d = (double*)malloc(n * sizeof(double));
 
 	// double d[ARRAY_MAX];
 	int i;

@@ -11,6 +11,7 @@
 // tömböt átadhatunk volna a qsortnak, és
 // ő nem tud a típusról.
 // Miért void pointerek a paraméterei?
+// Mert így könnyebb átkasztolni a paramétereket
 
 int compare(const void *a, const void *b)
 {
@@ -35,7 +36,7 @@ int compare(const void *a, const void *b)
 
 int is_Sorted(void *base, size_t nmemb, int (*compar)(const void *, const void *))
 {
-	for (int i = 0; i < nmemb; i++)
+	for (int i = 0; i < (int)nmemb - 1; i++)
 	{
 		double a = ((double *)base)[i];
 		double *ap = &a;
@@ -58,15 +59,37 @@ void swap(void *a, void *b)
 void shuffle(void *base, int n)
 {
 	for (int i = 0; i < n; i++)
-	{
+	{ 
+		int N = (rand() % (n-1)) + 1;
 		void *aptr = &(((double *)base)[i]);
-		void *bptr = &(((double *)base)[rand() % n]);
+		void *bptr = &(((double *)base)[N]);
 		swap(aptr, bptr);
 	}
 }
 
+void first_Max(void* base, size_t nmemb, int (*compar)(const void *, const void *))
+{
+
+for (int i = 1; i < (int)nmemb; i++)
+{
+		double a = ((double *)base)[0];
+		double *ap = &a;
+
+		double b = ((double *)base)[i];
+		double *bp = &b;
+
+
+	if(compar(ap, bp) == -1)
+	{
+		swap(ap, bp);
+	}
+}
+
+}
+
 void bogosort(void *base, size_t nmemb, size_t size, int (*compar)(const void *, const void *))
 {
+	first_Max(base, nmemb, compar);
 	while (is_Sorted(base, nmemb, compar) != 1)
 	{
 		shuffle(base, nmemb);

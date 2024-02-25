@@ -1,7 +1,7 @@
 ﻿#include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include "debugmalloc.h"
+// #include "debugmalloc.h"
 
 #define ARRAY_MAX 5
 
@@ -31,23 +31,46 @@ int compare(const void *a, const void *b)
 	// Mert így bármilyen típussal tud dolgozni az összehasonlító
 }
 
-void inline swap(void *a, void *b)
+// 5. FELADAT: qsort paraméterlistájával megegyező függvény, amely rendező algoritmust valósít meg
+
+int is_Sorted(void *base, size_t nmemb, int (*compar)(const void *, const void *))
+{
+	for (int i = 0; i < nmemb; i++)
+	{
+		double a = ((double *)base)[i];
+		double *ap = &a;
+
+		double b = ((double *)base)[i + 1];
+		double *bp = &b;
+		if (compare((const void *)ap, (const void *)bp) == 1)
+			return 0;
+	}
+	return 1;
+}
+
+void swap(void *a, void *b)
 {
 	double t = *((double *)a);
 	*(double *)a = *((double *)b);
 	*((double *)b) = t;
 }
 
-// 5. FELADAT: qsort paraméterlistájával megegyező függvény, amely rendező algoritmust valósít meg
+void shuffle(void *base, int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		void *aptr = &(((double *)base)[i]);
+		void *bptr = &(((double *)base)[rand() % n]);
+		swap(aptr, bptr);
+	}
+}
+
 void bogosort(void *base, size_t nmemb, size_t size, int (*compar)(const void *, const void *))
 {
-	void shuffle(void *base, int n, int a)
-{
-    for (int i = 0; i < n; i++)
-        
-
-        swap(base[i], base[rand() % (n - a)]);
-}
+	while (is_Sorted(base, nmemb, compar) != 1)
+	{
+		shuffle(base, nmemb);
+	}
 }
 
 int main()

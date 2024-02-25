@@ -25,16 +25,29 @@ int compare(const void *a, const void *b)
 	else
 		return 1;
 	// Válaszok:
-		//igen, úgy működik ahogyan vártuk
-		//Mert így több különböző szempont szerint rendezhetjük sorba a tömbök elemeit
-		//"visszatérési érték" "(*fgvnév)("asd" pram1, "asd" param2...)",
-		// Mert így bármilyen típussal tud dolgozni az összehasonlító
+	// igen, úgy működik ahogyan vártuk
+	// Mert így több különböző szempont szerint rendezhetjük sorba a tömbök elemeit
+	//"visszatérési érték" "(*fgvnév)("asd" pram1, "asd" param2...)",
+	// Mert így bármilyen típussal tud dolgozni az összehasonlító
+}
+
+void inline swap(void *a, void *b)
+{
+	double t = *((double *)a);
+	*(double *)a = *((double *)b);
+	*((double *)b) = t;
 }
 
 // 5. FELADAT: qsort paraméterlistájával megegyező függvény, amely rendező algoritmust valósít meg
-void own_qsort(void *base, size_t nmemb, size_t size, int(*compar)(const void *, const void *))
+void bogosort(void *base, size_t nmemb, size_t size, int (*compar)(const void *, const void *))
 {
+	void shuffle(void *base, int n, int a)
+{
+    for (int i = 0; i < n; i++)
+        
 
+        swap(base[i], base[rand() % (n - a)]);
+}
 }
 
 int main()
@@ -52,7 +65,6 @@ int main()
 	// hacker/óvatlan felhasználó leállíthatja a programunk: buffer overflow attack
 	// Warning kikapcsolás: C/C++ -> Preprocessor -> Preprocessor definitions: _CRT_SECURE_NO_WARNINGS
 
-
 	printf("Let's fill the array!\n");
 
 	int i;
@@ -67,7 +79,7 @@ int main()
 		// azért pointert vár a scanf függvény, mert így tudja módosítani a változó értékét referencia funkció nélkül
 	}
 
-	own_qsort(d, ARRAY_MAX, sizeof(double), compare);
+	bogosort(d, n, sizeof(double), compare);
 
 	for (i = 0; i < n; i++)
 	{

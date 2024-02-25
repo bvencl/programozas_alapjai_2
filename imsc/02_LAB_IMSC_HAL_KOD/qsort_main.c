@@ -87,7 +87,7 @@ for (int i = 1; i < (int)nmemb; i++)
 
 }
 
-void bogosort(void *base, size_t nmemb, size_t size, int (*compar)(const void *, const void *))
+void bogosort_szeru_kepzodmeny(void *base, size_t nmemb, size_t size, int (*compar)(const void *, const void *))
 {
 	first_Max(base, nmemb, compar);
 	while (is_Sorted(base, nmemb, compar) != 1)
@@ -125,7 +125,7 @@ int main()
 		// azért pointert vár a scanf függvény, mert így tudja módosítani a változó értékét referencia funkció nélkül
 	}
 
-	bogosort(d, n, sizeof(double), compare);
+	bogosort_szeru_kepzodmeny(d, n, sizeof(double), compare);
 
 	for (i = 0; i < n; i++)
 	{

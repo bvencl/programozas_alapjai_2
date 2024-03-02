@@ -1,0 +1,74 @@
+<mxfile host="65bd71144e">
+    <diagram id="S5HyiUhUgnmlAKwVd6mG" name="Page-1">
+        <mxGraphModel dx="1080" dy="779" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="Rectangle" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
+                    <mxGeometry x="215" y="380" width="160" height="242" as="geometry">
+                        <mxRectangle x="215" y="380" width="100" height="30" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="4" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="2" vertex="1">
+                    <mxGeometry y="26" width="160" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="- a: double&#10;- b: double&#10;&#10;&#10;&#10;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="2" vertex="1">
+                    <mxGeometry y="34" width="160" height="48" as="geometry"/>
+                </mxCell>
+                <mxCell id="peJ34csPtfUvkgGe0_dn-21" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="2" vertex="1">
+                    <mxGeometry y="82" width="160" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="+ konstruktor()&#10;+ kostruktor(double, double)&#10;+ setA(double): void&#10;+ setB(double): void&#10;+ getA() const: double&#10;+ getB() const: double&#10;+ area() const: double&#10;+ perimeter() const: double&#10;+ print() const: void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="2" vertex="1">
+                    <mxGeometry y="90" width="160" height="152" as="geometry"/>
+                </mxCell>
+                <mxCell id="peJ34csPtfUvkgGe0_dn-5" value="Circle&#10;&#10;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
+                    <mxGeometry x="455" y="380" width="180" height="242" as="geometry">
+                        <mxRectangle x="455" y="380" width="70" height="40" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="peJ34csPtfUvkgGe0_dn-6" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="peJ34csPtfUvkgGe0_dn-5" vertex="1">
+                    <mxGeometry y="26" width="180" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="peJ34csPtfUvkgGe0_dn-7" value="- r: double&#10;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="peJ34csPtfUvkgGe0_dn-5" vertex="1">
+                    <mxGeometry y="34" width="180" height="48" as="geometry"/>
+                </mxCell>
+                <mxCell id="peJ34csPtfUvkgGe0_dn-22" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="peJ34csPtfUvkgGe0_dn-5" vertex="1">
+                    <mxGeometry y="82" width="180" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="peJ34csPtfUvkgGe0_dn-8" value="+ konstruktor()&#10;+ kostruktor(double)&#10;+ setR(double): void&#10;+ getR() const: double&#10;+ area() const: double&#10;+ circumference() const: double&#10;+ print() const: void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="peJ34csPtfUvkgGe0_dn-5" vertex="1">
+                    <mxGeometry y="90" width="180" height="152" as="geometry"/>
+                </mxCell>
+                <mxCell id="peJ34csPtfUvkgGe0_dn-9" value="BoundingCircle" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
+                    <mxGeometry x="330" y="180" width="160" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="peJ34csPtfUvkgGe0_dn-10" value="- r: Rectangle&#10;-c: Circle&#10;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="peJ34csPtfUvkgGe0_dn-9" vertex="1">
+                    <mxGeometry y="26" width="160" height="34" as="geometry"/>
+                </mxCell>
+                <mxCell id="peJ34csPtfUvkgGe0_dn-11" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="peJ34csPtfUvkgGe0_dn-9" vertex="1">
+                    <mxGeometry y="60" width="160" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="peJ34csPtfUvkgGe0_dn-12" value="+ konstruktor(double)&#10;+ area() const: double" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="peJ34csPtfUvkgGe0_dn-9" vertex="1">
+                    <mxGeometry y="68" width="160" height="42" as="geometry"/>
+                </mxCell>
+                <mxCell id="peJ34csPtfUvkgGe0_dn-18" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="2" target="peJ34csPtfUvkgGe0_dn-10" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="280" y="240" as="sourcePoint"/>
+                        <mxPoint x="330" y="240" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="295" y="223"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="peJ34csPtfUvkgGe0_dn-19" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.984;entryY=0.449;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="peJ34csPtfUvkgGe0_dn-5" target="peJ34csPtfUvkgGe0_dn-10" edge="1">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="540" y="380" as="sourcePoint"/>
+                        <mxPoint x="575" y="240" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="545" y="223"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

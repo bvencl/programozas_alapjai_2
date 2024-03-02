@@ -48,6 +48,25 @@
 				"isDefault": false
 			},
 			"detail": "compiler: g++.exe"
+		},
+		{
+			"type": "cppbuild",
+			"label": "C++ MAKEFILE",
+			"command": "C:\\Pico-Tools\\mingw64\\bin\\g++.exe",
+			"args": [
+				"mingw32-make"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": false
+			},
+			"detail": "compiler: g++.exe"
 		}
 	]
 }

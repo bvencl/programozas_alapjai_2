@@ -1,6 +1,6 @@
 #include "rectangle.h"
 #include "circle.h"
-
+#include "boundingcircle.h"
 
 int main()
 {
@@ -29,6 +29,10 @@ int main()
     double c1R = c1.getR();
 
     
+    BoundingCircle bc(4);
+    double q = bc.area();
+
+
 
     return 0;
 }

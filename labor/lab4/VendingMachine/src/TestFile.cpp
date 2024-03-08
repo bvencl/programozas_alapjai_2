@@ -2,20 +2,26 @@
 
 int main()
 {
-	// kÛla defini·l·sa
+	// k√≥la defini√°l√°sa
 	std::string Cola("Coca-Cola");
 
-	// TODO m·sfajta ital(ok) defini·l·sa
+	// TODO m√°sfajta ital(ok) defini√°l√°sa
+	std::string Capy("Capy");
+	// automata l√©trehoz√°sa
+	VendingMachine coldDrinkMachine;
 
-	// automata lÈtrehoz·sa
-	VendingMachine coldDrinkMachine;	
-
-	// feltˆltÈs 5 Coca-col·val
+	// felt√∂lt√©s 5 Coca-col√°val
 	coldDrinkMachine.refill(Cola, 5);
 
-	// ellenırzÈs
+	// ellen√µrz√©s
 	coldDrinkMachine.print();
 
-	// TODO v·s·rl·s Ès m·solÛ konstruktor kiprÛb·l·sa, tˆbb automata lÈtrehoz·sa
-	
+	// TODO v√°s√°rl√°s √©s m√°sol√≥ konstruktor kipr√≥b√°l√°sa, t√∂bb automata l√©trehoz√°sa
+	std::string drink = coldDrinkMachine.removeOne();
+	coldDrinkMachine.print();
+
+	VendingMachine hotDrinkMachine = coldDrinkMachine;
+	hotDrinkMachine.print();
+	coldDrinkMachine.refill(Capy, 2);
+	coldDrinkMachine.print();
 }

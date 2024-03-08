@@ -10,13 +10,13 @@ public:
 	VendingMachine();	
 	VendingMachine(const VendingMachine&);
 		
-	int getDrinkNumber();
+	int getDrinkNumber() const;
 
 	std::string removeOne();
 	bool buy(int = 1);
-	bool refill(std::string, int);
+	bool refill(std::string const &, int);
 
-	void print();
+	void print() const;
 	
 	~VendingMachine();
 };

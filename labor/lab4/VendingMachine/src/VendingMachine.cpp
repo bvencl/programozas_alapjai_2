@@ -1,8 +1,8 @@
 #include "VendingMachine.h"
 #include <cstdio>
 
-// alapértelmezett konstruktor
-// kezdetben üres a gép
+// alapÃ©rtelmezett konstruktor
+// kezdetben Ã¼res a gÃ©p
 VendingMachine::VendingMachine()
 {
 	drinkNumber = 0;
@@ -10,59 +10,66 @@ VendingMachine::VendingMachine()
 }
 
 // TODO
-// másoló konstruktor
+// mÃ¡solÃ³ konstruktor
 VendingMachine::VendingMachine(const VendingMachine & other)
 {
-	
+	using namespace std;
+
+	drinkNumber = other.drinkNumber;
+	drinks = new string[other.drinkNumber];
+	for(int i = 0; i < drinkNumber; i++)
+	{
+		drinks[i] = other.drinks[i];
+	}
 }
 
-int VendingMachine::getDrinkNumber()
+int VendingMachine::getDrinkNumber() const
 {
 	return drinkNumber;
 }
 
 VendingMachine::~VendingMachine()
 {
-	// fel kell szabadítani az italoknak lefoglalt memóriaterületet
+	// fel kell szabadÃ­tani az italoknak lefoglalt memÃ³riaterÃ¼letet
 	delete[] drinks;
 }
 
-// elsõ ital kivétele
-// visszatér a nevével
+// elsÃµ ital kivÃ©tele
+// visszatÃ©r a nevÃ©vel
 std::string VendingMachine::removeOne()
 {
-	// ellenõrzés, hogy van-e még üdítõ az automatában
+	// ellenÃµrzÃ©s, hogy van-e mÃ©g Ã¼dÃ­tÃµ az automatÃ¡ban
 	if (drinkNumber <= 0)
-		return "Empty";
+		throw "Empty";
 
-	// visszatérési érték, elsõ elem
+	// visszatÃ©rÃ©si Ã©rtÃ©k, elsÃµ elem
 	std::string value = drinks[0];
 
-	// kisebb méretû tömb lefoglalása
+	// kisebb mÃ©retÃ» tÃ¶mb lefoglalÃ¡sa
 	std::string* tmp;
 	tmp = new std::string[drinkNumber - 1];
 
-	// elsõ utáni elemek átmásolása
+	// elsÃµ utÃ¡ni elemek Ã¡tmÃ¡solÃ¡sa
 	for (int i = 1; i < drinkNumber; i++)
 		tmp[i-1] = drinks[i];
 
-	// darabszám csökkentése
+	// darabszÃ¡m csÃ¶kkentÃ©se
 	drinkNumber = drinkNumber - 1;
 
-	// régi tömb felszabadítása
+	// rÃ©gi tÃ¶mb felszabadÃ­tÃ¡sa
 	delete[] drinks;
 
-	// új tömb beírása az osztályba
+	// Ãºj tÃ¶mb beÃ­rÃ¡sa az osztÃ¡lyba
 	drinks = tmp;
 
-	// visszatérés
+	// visszatÃ©rÃ©s
 	return value;
 }
 
-// vásárlás
-// egyszerre több italt is lehet vásárolni, alapértelmezetten 1
-// ha többet vennénk, mint amennyi készleten van, hamissal tér vissza, egyébként igazzal
-// sikeres vásárlás esetén csökkenteni kell a darabszámot, és törölni az elemeket
+// vÃ¡sÃ¡rlÃ¡s
+// egyszerre tÃ¶bb italt is lehet vÃ¡sÃ¡rolni, alapÃ©rtelmezetten 1
+// ha tÃ¶bbet vennÃ©nk, mint amennyi kÃ©szleten van, hamissal tÃ©r vissza, egyÃ©bkÃ©nt igazzal
+// sikeres vÃ¡sÃ¡rlÃ¡s esetÃ©n csÃ¶kkenteni kell a darabszÃ¡mot, Ã©s tÃ¶rÃ¶lni az elemeket
 bool VendingMachine::buy(int num)
 {
 	if (num > drinkNumber)
@@ -76,34 +83,42 @@ bool VendingMachine::buy(int num)
 }
 
 // TODO
-// automata feltöltése
-// meg kell adni az ital nevét, és hogy mennyit rakunk belõle a gépbe
-bool VendingMachine::refill(std::string pName, int pQty)
+// automata feltÃ¶ltÃ©se
+// meg kell adni az ital nevÃ©t, Ã©s hogy mennyit rakunk belÃµle a gÃ©pbe
+bool VendingMachine::refill(std::string const & pName, int pQty)
 {
-	// csak pozitív értékkel mûködjön
-	
-	//nagyobb tömb lefoglalása
-	
-	// meglévõ elemek átmásolása
-	
-	// új elemek betöltése
-	
-	// darabszám felülírása
+	using namespace std;
 
-	// régi tömb törlése
-	
-	// új tömb átírása
+	// csak pozitÃ­v Ã©rtÃ©kkel mÃ»kÃ¶djÃ¶n
+	if(pQty < 0)
+		throw "nem jo szam .refill";
+	//nagyobb tÃ¶mb lefoglalÃ¡sa
+	string * tmp = new string[drinkNumber + pQty];
+	// meglÃ©vÃµ elemek Ã¡tmÃ¡solÃ¡sa
+	for(int i = 0; i < drinkNumber; i++)
+	{
+		tmp[i + pQty] = drinks[i];
+	}
+	// Ãºj elemek betÃ¶ltÃ©se
+	for(int i = 0; i < pQty; i++)
+	{
+		tmp[i] = pName;
+	}
+	// darabszÃ¡m felÃ¼lÃ­rÃ¡sa
+	drinkNumber += pQty;
+	// rÃ©gi tÃ¶mb tÃ¶rlÃ©se
+	delete[] drinks;
+	// Ãºj tÃ¶mb Ã¡tÃ­rÃ¡sa
+	drinks = tmp;
 
 	return true;
 }
 
-// készlet kiírása
-void VendingMachine::print()
+// kÃ©szlet kiÃ­rÃ¡sa
+void VendingMachine::print() const
 {
 	printf("Keszlet: %d\n", drinkNumber);
 	for (int i = 0; i < drinkNumber; i++)
 		printf("%s\n", drinks[i].c_str());
 	printf("---Lista vege---\n\n");
 }
-
-

@@ -55,7 +55,7 @@
 			"command": "mingw32-make",
 			"args": [],
 			"options": {
-				"cwd": "${fileDirname}"
+				"cwd": "${fileDirname}\\.."
 			},
 			"problemMatcher": [
 				"$gcc"

@@ -31,7 +31,7 @@ double FallingObject::GetHeight(double Time) const
     if (Time > GetFallTime())
         return 0;
 
-    return InitialHeight - 0.5 * Gravity * (Time * Time);
+    return InitialHeight - (0.5 * Gravity * (Time * Time));
 }
 
 double FallingObject::GetSpeed(double Time) const
@@ -43,5 +43,5 @@ double FallingObject::GetSpeed(double Time) const
 
 double FallingObject::GetFallTime() const
 {
-    return std::sqrt((2 * InitialHeight)/ Gravity);
+    return std::sqrt((2 * InitialHeight) / Gravity);
 }

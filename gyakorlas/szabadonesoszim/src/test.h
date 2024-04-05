@@ -1,21 +1,25 @@
 #pragma once
 
-class Test
+class FallingObject
 {
+
 private:
-    double acceleration;
-    double startHeight;
+    double InitialHeight, Gravity;
 
 public:
-    Test(double startHeight, double acceleration);
+    FallingObject(double H, double G = 9.81);
 
-    Test(double startHeight) : acceleration(9.81){};
+    double GetInitialHeight() const;
 
+    double GetGravity() const;
 
-    double calculate(double time);
-    void getHeight() const;
-    void setHeight(double height);
-    void getSpeed() const;
-    void getAcceleration() const;
-    void setAcceleration(double acceleration);
+    void SetInitialHeight(double H);
+
+    void SetGravity(double G);
+
+    double GetHeight(double Time) const;
+
+    double GetSpeed(double Time) const;
+
+    double GetFallTime() const;
 };

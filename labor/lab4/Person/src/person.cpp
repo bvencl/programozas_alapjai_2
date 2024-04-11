@@ -1,6 +1,5 @@
 ﻿// ha nem includeolnánk, nem ismerné a fordító a Person deklarációt
 #include "person.h"
-
 #include <iostream>
 #include <cstring>
 
@@ -24,6 +23,7 @@ Person::Person(const Person& p)  {
 	this->name = nullptr;
 	this->setName(p.getName());
 	this->age = p.getAge();
+	// this->setAge(p.getAge());
 }
 
 // amit lefoglalsz, szabadítsd is fel!

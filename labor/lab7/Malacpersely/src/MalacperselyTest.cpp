@@ -2,6 +2,8 @@
 #include <iostream>
 #include "Malacpersely.h"
 
+using std::cout;
+using std::endl;
 
 int main(int argc, char* argv[]) {
 
@@ -20,27 +22,30 @@ int main(int argc, char* argv[]) {
 	/////////////////////////////////////////////////////////////////
 	//A kovetkezokeppen szeretnenk (kommentezd ki sorba a teszteleshez, ahogy az egyes operatorokat megvalositod)
 	Malacpersely persely1;
-	//persely1 = persely1 + 100;
+	persely1 = persely1 + 100;
 	
 	//Ezt akarjuk latni: "A persely1 erteke 100 Ft." - A Ft. -ot nem mi irtuk moge!
-	//cout << "A persely1 erteke " << persely1 << endl;
+	cout << "A persely1 erteke " << persely1 << endl;
 
 	Malacpersely persely2;
 	//Vigyazz, ez masik operator.
-	//persely2 += 200;
-	//cout << "A persely2 erteke " << persely2 << endl;
-	//cout << "A persely2 erteke " << (persely2+=500) << endl;
+	persely2 += 200;
+	cout << "A persely2 erteke " << persely2 << endl;
+	cout << "A persely2 erteke " << (persely2+=500) << endl;
 
-	//persely1 += persely2;
-	//cout << "A persely1 erteke atontes utan " << persely1 << endl;
-	//cout << "A persely2 pedig ures (0-t varunk): " << persely2 << endl;
+	persely1 += persely2;
+	cout << "A persely1 erteke atontes utan " << persely1 << endl;
+	cout << "A persely2 pedig ures (0-t varunk): " << persely2 << endl;
 
 	//Ezek mukodni fognak, ha az elozoek is:
-	//persely2 += 100;
-	//Malacpersely persely3(500);
+	persely2 += 100;
+	Malacpersely persely3(500);
+	cout << "A persely1 erteke " << persely1 << endl;
+	cout << "A persely2 erteke " << persely2 << endl;
+	cout << "A persely3 erteke " << persely3 << endl;
 	
 	//Ehhez a kiirashoz at kell gondolnod az operatorok visszateresi erteket, illetve tovabbi operatorra lehet szukseg:
-	//cout << "Egy szazas plusz a harom persely osszerteke " << persely1 + persely2 + persely3 + 100 << endl;
+	cout << "Egy szazas plusz a harom persely osszerteke " << persely1 + persely2 + persely3 + 100 << endl;
 
 
 

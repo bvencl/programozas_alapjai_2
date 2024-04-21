@@ -9,11 +9,11 @@ private:
     unsigned eggcnt;
 
 public:
-    EasterBunny();
+    EasterBunny() : inside(nullptr), eggcnt(0){};
     EasterBunny(const EasterBunny &other);
     ~EasterBunny();
-    void insert(const Egg &param);
-    bool isElement(const Egg &param) const;
+    void insert(const Egg &);
+    bool isElement(const Egg &) const;
 
     // operatorok
     friend std::ostream &operator<<(std::ostream &, const EasterBunny &);

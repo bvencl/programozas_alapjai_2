@@ -1,5 +1,6 @@
 #include <iostream>
 #include <ostream>
+#include <string>
 
 // 5. Tervezési feladat (10p) Egy edzésre szolgáló gokartpálya üzemeltetéséhez készítünk szoftvert. Az egyes versenyautóknak (Car) van egy
 // egyedi, egész szám azonosítójuk (number), amit vásárláskor örökre hozzájuk rendelnek. Az edzések során az
@@ -14,13 +15,13 @@
 class Car
 {
 private:
-    int number;
+    const int number;
     int order;
-
+    static int carsOnTrack;
 
 public:
-    Car(int number) : number(number), order(0){};
-    static int carsOnTrack;
+    Car(const int number) : number(number), order(0){};
+
     void entersTrack()
     {
         Car::carsOnTrack++;
@@ -37,7 +38,7 @@ public:
         return order;
     }
 
-    bool operator<(const Car& theOther)
+    bool operator<(const Car& theOther) const
     {
         if(order < theOther.order)
         {
@@ -45,6 +46,12 @@ public:
         }
         return false;
     }
+
+    void print(std::ostream& os = std::cout) const
+    {
+        os << "bazzeg";
+    }
+
 };
 
 int Car::carsOnTrack = 0;
@@ -68,6 +75,7 @@ int main()
     {
         std::cout << c3.getNumber() << " entered the track earlier.";
     }
+
 
     return 0;
 }

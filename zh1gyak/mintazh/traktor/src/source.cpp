@@ -10,7 +10,6 @@
 // (used), onnantól ezt kell kiírnia (pl. “Mar felhasznaltak.”). A traktor maga nem tudja, hogy az adott
 // permetezőszerét már használták-e.
 
-
 class Spray
 {
 
@@ -19,7 +18,7 @@ private:
     bool isUsed;
 
 public:
-    Spray(int type = 0, bool isUsed = false) : type(type), isUsed(isUsed){};
+    Spray(int type = 0) : type(type), isUsed(false){};
     void vaporize()
     {
         if (!isUsed)
@@ -28,7 +27,7 @@ public:
             isUsed = true;
         }
         else
-            std::cout << "Mar felhasznaltak" << std::endl;   
+            std::cout << "Mar felhasznaltak" << std::endl;
     }
 
     friend class Tractor;
@@ -39,14 +38,18 @@ class Tractor
 private:
     Spray *sprays;
     int spraycnt;
-public:
-    Tractor(): sprays(nullptr) {};
 
-    void addSpray(Spray spray)
+public:
+    Tractor() : sprays(nullptr){};
+    ~Tractor()
     {
-        
-        Spray* tmp = new Spray[spraycnt + 1]; 
-        for(int i = 0; i < spraycnt; i++)
+        delete[] sprays;
+    }
+    void addSpray(const Spray &spray)
+    {
+
+        Spray *tmp = new Spray[spraycnt + 1];
+        for (int i = 0; i < spraycnt; i++)
         {
             tmp[i] = sprays[i];
         }

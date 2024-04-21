@@ -2,7 +2,7 @@
 #include "egg.h"
 #include <ostream>
 
-EasterBunny::EasterBunny() : inside(nullptr), eggcnt(0){};
+
 
 EasterBunny::EasterBunny(const EasterBunny &other)
 {
@@ -76,7 +76,7 @@ EasterBunny& EasterBunny::operator=(const EasterBunny& theOther)
             return newBunny;
 
         newBunny.inside = new Egg[newBunny.eggcnt];
-    unsigned idx = 0;
+        unsigned idx = 0;
         for (unsigned i = 0; i < eggcnt; i++, idx++)
         {
             newBunny.inside[i] = inside[i];

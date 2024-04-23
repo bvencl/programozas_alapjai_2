@@ -13,6 +13,7 @@ public:
     void reload();
 
     unsigned use();
-
+    unsigned getDamage() const;
+    void setDamage(unsigned);
     std::string toString() const;
 };

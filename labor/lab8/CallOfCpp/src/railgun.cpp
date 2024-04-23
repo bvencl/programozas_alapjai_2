@@ -31,6 +31,15 @@ void Railgun::recharge()
     }
 }
 
+unsigned Railgun::getDamage() const
+{
+    return Weapon::getDamage();
+}
+
+void Railgun::setDamage(unsigned dmg)
+{
+    Weapon::setDamage(dmg);
+}
 
 // Weapon<|Railgun; damage of shooting=90; energy=98
 std::string Railgun::toString() const

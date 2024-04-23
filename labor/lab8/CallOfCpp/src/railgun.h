@@ -15,6 +15,9 @@ public:
 
     void recharge();
 
+    unsigned getDamage() const;
+    void setDamage(unsigned);
+
     std::string toString() const;
 
 };

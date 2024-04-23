@@ -12,4 +12,7 @@ public:
     void sharpen();
     double use();
     std::string toString();
+
+    unsigned getDamage() const;
+    void setDamage(unsigned);
 };

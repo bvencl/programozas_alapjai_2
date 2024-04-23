@@ -55,6 +55,18 @@ unsigned Pistol::use()
 
     return 0;
 }
+
+unsigned Pistol::getDamage() const
+{
+    return Weapon::getDamage();
+}
+
+void Pistol::setDamage(unsigned dmg)
+{
+    Weapon::setDamage(dmg);
+}
+
+
 //Weapon<|Pistol; damage of a bullet=60; clipSize=12; bulletsInClip=12; totalBullets=35 
 
 std::string Pistol::toString() const

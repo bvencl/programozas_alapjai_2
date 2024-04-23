@@ -4,15 +4,23 @@
 
 void Knife::sharpen()
 {
-    sharpness += .1;
+    sharpness *= 1.1;
 }
 
 double Knife::use()
 {
     double dmg = getDamage() * sharpness;
-    Weapon::use();
     sharpness *= 0.95;
     return dmg;
+}
+
+unsigned Knife::getDamage() const{
+    return Weapon::getDamage();
+}
+
+void Knife::setDamage(unsigned dmg)
+{
+    Weapon::setDamage(dmg);
 }
 
 std::string Knife::toString()

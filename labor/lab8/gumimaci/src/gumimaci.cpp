@@ -10,6 +10,7 @@ public:
     {
         // key generalasa
     }
+    
 };
 
 class Person : public Partner
@@ -18,7 +19,7 @@ class Person : public Partner
     std::string taxNumber;
 
 public:
-    Person(long id, std::string &const firstName, std::string &const lastName, std::string &const taxNumber)
+    Person(long id, const std::string & firstName,const std::string & lastName,const std::string & taxNumber)
     : Partner(id), firstName(firstName), lastName(lastName), taxNumber(taxNumber)
     {
     }
@@ -33,7 +34,7 @@ class Company : public Partner
 {
     std::string businessName;
     std::string VATIN;
-    Company(long id, std::string &const businessName, std::string &const VATIN)
+    Company(long id,const std::string & businessName, const std::string & VATIN)
     : Partner(id), businessName(businessName), VATIN(VATIN)
     {
     }
@@ -47,6 +48,6 @@ void f(Partner const& prtnr)
 
 int main()
 {
-    Person p(23, "horvath", "karcsi", "1234567");
+    Person p((long)23, "horvath", "karcsi", "1234567");
     f(p);
 }

@@ -10,6 +10,6 @@ public:
     Knife(unsigned damage = 30, double sharpness = 0.8 ) : Weapon(damage), sharpness(sharpness) {};
 
     void sharpen();
-    unsigned use();
+    double use();
     std::string toString();
 };

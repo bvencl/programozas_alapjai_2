@@ -1,20 +1,22 @@
 #include "knife.h"
 
-Knife::Knife(unsigned damage = 30, double sharpness = 0.8) : Weapon(damage), sharpness(sharpness){};
+// Knife::Knife(unsigned damage = 30, double sharpness = 0.8) : Weapon(damage), sharpness(sharpness){};
 
 void Knife::sharpen()
 {
-    sharpness *= 1.1;
+    sharpness += .1;
 }
 
-unsigned Knife::use()
+double Knife::use()
 {
-    unsigned dmg = Weapon::use();
+    double dmg = getDamage() * sharpness;
+    Weapon::use();
     sharpness *= 0.95;
-    return dmg * sharpness;
+    return dmg;
 }
 
 std::string Knife::toString()
 {
-    return std::string("Weapon<|Knife; damage can be casued when stabbing= ") + std::to_string(getDamage()) + "; sharpness= " + std::to_string(sharpness);
+    return std::string("Weapon<|Knife; damage can be caused when stabbing=") + std::to_string(getDamage() * sharpness) + "; sharpness=" + std::to_string(sharpness);
 }
+

@@ -1,0 +1,33 @@
+Weapon; damage can be caused=100 
+Weapon<|Knife; damage can be caused when stabbing=24; sharpness=0.8 
+Weapon<|Pistol; damage of a bullet=60; clipSize=12; bulletsInClip=12; totalBullets=36 
+Weapon<|Railgun; damage of shooting=90; energy=100 
+ 
+Damage caused with excalibur: 99 
+Damage caused with knife: 24 
+Damage caused with pistol: 60 
+Damage caused with railgun: 90 
+ 
+Weapon; damage can be caused=99 
+Weapon<|Knife; damage can be caused when stabbing=20.064; sharpness=0.836 
+Weapon<|Pistol; damage of a bullet=60; clipSize=12; bulletsInClip=12; totalBullets=35 
+Weapon<|Railgun; damage of shooting=90; energy=98
+
+
+
+
+
+Weapon; damage can be caused=100
+Weapon<|Knife; damage can be caused when stabbing=24.000000; sharpness=0.800000
+Weapon<|Pistol; damage of a bullet=60; clipSize=12; bulletsInClip=12; totalBullets=36
+Weapon<|Railgun; damage of shooting=90; energy=100
+
+Damage caused with excalibur: 99
+Damage caused with knife: 24
+Damage caused with pistol: 60
+Damage caused with railgun: 90
+
+Weapon; damage can be caused=99
+Weapon<|Knife; damage can be caused when stabbing=24.244000; sharpness=0.836000
+Weapon<|Pistol; damage of a bullet=60; clipSize=12; bulletsInClip=12; totalBullets=35
+Weapon<|Railgun; damage of shooting=90; energy=98

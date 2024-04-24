@@ -11,7 +11,7 @@ public:
 
     void sharpen();
     double use();
-    std::string toString();
+    std::string toString() const;
 
     unsigned getDamage() const;
     void setDamage(unsigned);

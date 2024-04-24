@@ -23,7 +23,7 @@ void Knife::setDamage(unsigned dmg)
     Weapon::setDamage(dmg);
 }
 
-std::string Knife::toString()
+std::string Knife::toString() const
 {
     return std::string("Weapon<|Knife; damage can be caused when stabbing=") + std::to_string(getDamage() * sharpness) + "; sharpness=" + std::to_string(sharpness);
 }

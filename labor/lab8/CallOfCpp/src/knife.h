@@ -4,6 +4,7 @@
 class Knife : private Weapon
 {
     double sharpness;
+    int kecske;
 
 public:
 
@@ -13,6 +14,6 @@ public:
     double use();
     std::string toString() const;
 
-    unsigned getDamage() const;
+    unsigned getDamage()const;
     void setDamage(unsigned);
 };

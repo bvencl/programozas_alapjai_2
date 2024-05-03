@@ -57,7 +57,6 @@ int main() {
 	cout << "Player#2 drops selected weapon:" << endl;
 	//TODO p2 dobja el a kiválasztott fegyvert
 
-
 	printPlayers(p1, p2, enemy);
 	/***************************ELVÁRT KIMENET**********************************\
 	| Player#1 is alive; health: 100; has 2 weapon(s); selected Pistol          |

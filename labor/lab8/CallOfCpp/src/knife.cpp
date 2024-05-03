@@ -14,7 +14,7 @@ double Knife::use()
     return dmg;
 }
 
-unsigned Knife::getDamage() const{
+unsigned Knife::getDamage()const{
     return Weapon::getDamage();
 }
 

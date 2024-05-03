@@ -1,5 +1,6 @@
 # TARGET: Az eredményprogram neve (nem kötelező beleírni a .exe-t, Windowson automatikus)
 TARGET = main
+
 # CXX: A C++ fordító. El is hagyhatjuk. Ha nem adjuk meg, akkor a rendszer default C++ fordítója
 CXX = g++	
 # CXXFLAGS: A fordító flagek

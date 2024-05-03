@@ -31,5 +31,8 @@ nullpointer tényleg nullpointert tárol refcounter is nullptr
 dereferálni lehessen, értéket vissza lehessen adni operator*
 összehasonlítás ==
 nem lehet rajta pointeraritmetikát végezni
-
+cconst, const
+értékadás constansra, nem constra,
+destrukktor
+nullptr-t is tudjon
 */

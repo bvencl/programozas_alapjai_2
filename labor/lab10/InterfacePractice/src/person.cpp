@@ -16,7 +16,7 @@ int Person::getAge() const
 
 bool Person::setHeight(double height)
 {
-	if (height<10 || height>300)
+	if (height < 10 || height > 300)
 		return false;
 	this->height = height;
 	return true;
@@ -27,10 +27,9 @@ double Person::getHeight() const
 	return height;
 }
 
-
 bool Person::setWeight(double weight)
 {
-	if (weight<0 || weight>400)
+	if (weight < 0 || weight > 400)
 		return false;
 
 	this->weight = weight;
@@ -43,44 +42,51 @@ double Person::getWeight() const
 	return weight;
 }
 
-
-void Person::serialize(ostream& os) const
+void Person::serialize(ostream &os) const
 {
 	// unsigned char -> int, különben karakterként írja ki
 	os << (int)age << '\t' << height << '\t' << weight << endl;
 }
 
-void Person::deserialize(istream& is)
+void Person::deserialize(istream &is)
 {
-	double height;
-	double weight;
-	int age;
-	char c;
-
+	int age, height, weight;
 	is >> age;
-	is >> c;
-	if (c != ';')
-		is.clear(ios::failbit);
+	if (!is)
+	{
+		return;
+	}
 
-	is >> height;
-	is >> c;
-	if (c != ';')
-		is.clear(ios::failbit);
-
-	is >> weight;
-
+	is >> height >> weight;
 	if (is)
 	{
 		this->age = age;
-		this->height = height;
 		this->weight = weight;
+		this->height = height;
 	}
 	else
-		cerr << "Error in input format." << endl;
+		throw("could not read person");
 }
 
+bool Person::operator==(Comparable const &rhs) const
+{
+	return true;
+}
+
+bool Person::operator<(Comparable const &rhs) const
+{
+
+	Person const *prhs = dynamic_cast<Person const *>(&rhs);
+	if (prhs == nullptr)
+		throw "Invalid comparision";
+	// return height < ((Person const &)rhs).height; // DOWNCAST, lefelé kasztolok (ősből példányba), ILYET NEM CSINÁLUNK
+	return height < prhs->height;
+}
+
+/*
 ostream& operator<<(ostream& os, const Person& right)
 {
 	//TODO
 	return os;
 }
+*/

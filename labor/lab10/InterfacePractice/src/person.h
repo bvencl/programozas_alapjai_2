@@ -2,8 +2,12 @@
 
 #include "comparable.h" // 1. feladat
 #include "serializable.h" // 1.,3. feladat
+#include <iostream>
 
-class Person : public Serializable // 1. feladat
+class Person: public Comparable
+, public Serializable // 1. feladat
+
+
 {
 	unsigned char age; // Visual Studio-ban char[-128..127], egyébként implementáció függő (undefined)
 	double height;
@@ -22,8 +26,13 @@ public:
 	double getWeight() const;
 
 
-	void serialize(std::ostream& os) const;
-	void deserialize(std::istream& is);
+	void serialize(std::ostream& os) const override;
+	void deserialize(std::istream& is) override;
+
+	bool operator==(Comparable const& rhs) const override;
+	bool operator<(Comparable const& rhs) const override;
+	
+
 };
 
-std::ostream& operator<<(std::ostream& os, const Person& right);
+// std::ostream& operator<<(std::ostream& os, const Person& right);

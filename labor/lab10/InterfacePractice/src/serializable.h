@@ -6,11 +6,11 @@ class Serializable
 {
 public:
 	// Beleírja az os-be a mentendő részeit
-	virtual void serialize(std::ostream& os) const = 0;
+	virtual void serialize(std::ostream &os) const = 0;
 
 	// Visszaállítja magát az is-ből
-	virtual void deserialize(std::istream& is) = 0;
+	virtual void deserialize(std::istream &is) = 0;
 };
 
-std::ostream& operator<<(std::ostream&, const Serializable&);
-std::istream&operator>>(std::istream&, Serializable&);
+std::ostream &operator<<(std::ostream &, const Serializable &);
+std::istream &operator>>(std::istream &, Serializable &);

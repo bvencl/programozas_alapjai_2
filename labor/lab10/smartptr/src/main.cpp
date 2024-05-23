@@ -4,6 +4,9 @@
 // A main-t gép írta a teszteléshez, remélem nem probléma
 int main()
 {
+    double *fasz = new double(3123);
+    SharedPtr a = fasz;
+    SharedPtr b = fasz;
     SharedPtr p = SharedPtr(new double(42.42));
     SharedPtr q = SharedPtr(new double(123.123));
 

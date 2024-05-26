@@ -1,0 +1,96 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "C build",
+            "type": "cppbuild",
+            "command": "gcc",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "detail": "gcc"
+        },
+        {
+            "label": "C++ build",
+            "type": "cppbuild",
+            "command": "g++",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "detail": "g++"
+        },
+        {
+            "label": "C++ build all files",
+            "type": "cppbuild",
+            "command": "g++",
+            "args": [
+                "${fileDirname}/*.cpp",
+                "-g",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "detail": "g++"
+        },
+        {
+            "label": "Makefile build",
+            "type": "cppbuild",
+            "command": "make",
+            "args": [],
+            "options": {
+                "cwd": "${fileDirname}/.."
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "detail": "Makefile"
+        },
+        {
+            "label": "Makefile build args",
+            "type": "cppbuild",
+            "command": "make",
+            "args": [],
+            "options": {
+                "cwd": "${fileDirname}/.."
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "detail": "Makefile with args"
+        }
+    ]
+}

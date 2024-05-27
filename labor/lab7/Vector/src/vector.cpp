@@ -1,10 +1,12 @@
 #include "vector.h"
-// #define NDEBUG
+#include <algorithm>
 #include <cassert>
 
 using std::cerr;
 
-Vector::Vector(unsigned maxElementsNum) : elementNum(0), maxElementsNum(maxElementsNum), pData(nullptr) {}
+Vector::Vector(unsigned maxElementsNum) : elementNum(0), maxElementsNum(maxElementsNum), pData(nullptr)
+{
+}
 
 Vector::Vector(const Vector &theOther)
 {
@@ -115,6 +117,17 @@ std::ostream &operator<<(std::ostream &os, const Vector &v)
     return os;
 }
 
+std::istream &operator>>(std::istream &is, Vector &v)
+{
+    int tmp;
+    for (size_t i = 0; i < v.getMaxElementsNum() && !is.eof(); i++)
+    {
+        is >> tmp;
+        v.insert(i, tmp);
+    }
+    return is;
+}
+
 Vector &Vector::operator=(const Vector &rhs)
 {
     if (this == &rhs)
@@ -133,21 +146,48 @@ Vector &Vector::operator=(const Vector &rhs)
 int &Vector::operator[](unsigned idx)
 {
     if (idx >= elementNum)
-        throw "vector overindexing";
+        throw "overindexing vector";
     return pData[idx];
 }
 
 const int &Vector::operator[](unsigned idx) const
 {
     if (idx >= elementNum)
-        throw "vector overindexing";
+        throw "overindexing vector";
     return pData[idx];
 }
 
 void Vector::operator*=(unsigned mul)
 {
-    for(unsigned i = 0; i < elementNum; i++)
+    for (unsigned i = 0; i < elementNum; i++)
     {
         pData[i] *= mul;
     }
+}
+
+void Vector::operator+=(unsigned right)
+{
+    for (unsigned i = 0; i < elementNum; i++)
+    {
+        pData[i] += right;
+    }
+}
+
+void Vector::sort(bool (*f)(const int &, const int &))
+{
+    std::sort(pData, pData + size(), f); // Sokkal hatékonyabb bárminél amit én írni tudtam volna :(
+}
+
+bool Sorters::ascend(const int &one, const int &another)
+{
+    if (one < another)
+        return true;
+    return false;
+}
+
+bool Sorters::descend(const int &one, const int &another)
+{
+    if (one < another)
+        return false;
+    return true;
 }

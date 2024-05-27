@@ -4,7 +4,7 @@ TARGET = main
 # CXX: A C++ fordító. El is hagyhatjuk. Ha nem adjuk meg, akkor a rendszer default C++ fordítója
 CXX = g++	
 # CXXFLAGS: A fordító flagek
-CXXFLAGS = -g -Wall -pedantic
+CXXFLAGS = -g -Wall -pedantic -fdiagnostics-color=always
 # LDFLAGS: A linker flagek (most üres)
 LDFLAGS =
 
